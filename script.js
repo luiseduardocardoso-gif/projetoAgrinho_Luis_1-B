@@ -43,22 +43,37 @@ function interesseImovel(nomeImovel) {
     falarTexto("Você selecionou o imóvel " + nomeImovel + ". O formulário está pronto.");
 }
 
-// Envio do formulário de contato
-function enviarProposta(event) {
-    event.preventDefault();
-    const nome = document.getElementById('nome').value;
-    const alerta = document.getElementById('alertaVisual');
-    
-    alerta.style.display = 'block';
-    falarTexto(`Obrigado ${nome}, sua solicitação foi enviada com sucesso.`);
+const nome = document.getElementById("nome").value;
 
-    if(!leitorCegoAtivo && !document.body.classList.contains("modo-surdo-ativo")) {
-        alert(`Obrigado, ${nome}! Solicitação enviada com sucesso.`);
-    }
+const popup = document.createElement("div");
 
-    setTimeout(() => { alerta.style.display = 'none'; }, 4000);
-    document.getElementById('formContato').reset();
-}
+popup.innerHTML = `
+<div class="popup-sucesso">
+    <div class="popup-conteudo">
+        <div class="icone-sucesso">✓</div>
+
+        <h2>Solicitação Recebida!</h2>
+
+        <p>
+            Obrigado, <strong>${nome}</strong>.
+            Sua solicitação foi enviada com sucesso.
+        </p>
+
+        <p>
+            Nossa equipe especializada em imóveis sustentáveis
+            analisará seus dados e entrará em contato em breve.
+        </p>
+
+        <button onclick="this.parentElement.parentElement.remove()">
+            Fechar
+        </button>
+    </div>
+</div>
+`;
+
+document.body.appendChild(popup);
+
+document.getElementById("formContato").reset();
 
 /* CONFIGURAÇÕES DO PAINEL DE ACESSIBILIDADE */
 function toggleLeitorCego() {
@@ -70,11 +85,25 @@ function toggleLeitorCego() {
         window.speechSynthesis.cancel();
     }
 }
-
-function toggleModoSurdo() {
+function toggleModoSurdo(){
     const ativo = document.body.classList.toggle("modo-surdo-ativo");
-    document.getElementById("opt-surdo").innerText = ativo ? "Modo Alerta Visual: ATIVADO ✅" : "Modo Alerta Visual: DESATIVADO";
+
+    document.getElementById("opt-surdo").innerText =
+        ativo
+        ? "Modo Alerta Visual: ATIVADO ✅"
+        : "Modo Alerta Visual: DESATIVADO";
+
+    const alerta = document.getElementById("alertaVisual");
+
+    if(ativo){
+        alerta.style.display = "block";
+
+        setTimeout(() => {
+            alerta.style.display = "none";
+        }, 3000);
+    }
 }
+
 
 function abrirPainel(){ 
     const p = document.getElementById("painel");
@@ -94,13 +123,50 @@ function aumentarFonte(){
     document.body.style.fontSize = tamanhoFonte + "px"; 
 }
 
-function disminuirFonte(){ 
+function diminuirFonte(){ 
     if(tamanhoFonte > 12){ 
         tamanhoFonte -= 2; 
         document.body.style.fontSize = tamanhoFonte + "px"; 
     } 
 }
 
-function modoEscuro(){ document.body.classList.toggle("dark"); }
+function modoEscuro(){
+    document.documentElement.classList.toggle("dark");
+}
 function altoContraste(){ document.body.classList.toggle("contraste"); }
 
+function tratarCliqueBotao(event){
+    event.preventDefault();
+
+    const painel = document.getElementById("painel");
+
+    if(painel.classList.contains("ativo")){
+        fecharPainel();
+    } else {
+        abrirPainel();
+    }
+}
+
+function iniciarArrasto(event){
+    // Mantida apenas para evitar erro
+}
+
+function tratarCliqueBotao(event){
+    event.preventDefault();
+
+    const painel = document.getElementById("painel");
+
+    painel.classList.toggle("ativo");
+}
+
+function iniciarArrasto(event){
+    // apenas evita erro
+}
+
+function abrirPainel(){
+    document.getElementById("painel").style.display = "flex";
+}
+
+function fecharPainel(){
+    document.getElementById("painel").style.display = "none";
+}
