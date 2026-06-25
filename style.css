@@ -1,0 +1,273 @@
+:root {
+    --primary: #1e5631;
+    --primary-light: #2e8b57;
+    --accent: #68d391;
+    --bg-light: #f4f7f4;
+    --text-dark: #2d3748;
+    --card-bg: #ffffff;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+    background: var(--bg-light);
+    color: var(--text-dark);
+    transition: 0.3s ease;
+    font-size: 16px;
+}
+
+header{
+    background: linear-gradient(135deg, #11381e 0%, #2e8b57 100%);
+    color:white;
+    text-align:center;
+    padding: 60px 20px;
+    box-shadow: inset 0 -10px 20px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+nav{
+    background: #121f17;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+    position: sticky;
+    top: 0;
+    z-index: 900;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+nav button{
+    background: none;
+    border: none;
+    color: #e2e8f0;
+    padding: 12px 24px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+nav button:hover, nav button.nav-ativo {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--accent);
+}
+
+.pagina{
+    display:none;
+    padding: 50px 20px;
+    max-width: 1200px;
+    margin: auto;
+    animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.ativa{
+    display:block;
+}
+
+h2{
+    color: var(--primary);
+    margin-bottom: 35px;
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 700;
+}
+
+/* VITRINE DE IMÓVEIS */
+.vitrine {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 30px;
+}
+
+.card-imovel {
+    background: var(--card-bg);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid rgba(0,0,0,0.03);
+}
+
+.card-imovel:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+.card-imovel img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+}
+
+.info-imovel {
+    padding: 25px;
+}
+
+.info-imovel h3 {
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+    color: #1a202c;
+}
+
+.preco {
+    font-size: 1.6rem;
+    color: var(--primary-light);
+    font-weight: 700;
+    margin: 15px 0;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 15px;
+}
+
+.tag {
+    background: #eef7ee;
+    color: #2e8b57;
+    font-size: 11px;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+/* DESIGN DA PÁGINA EXPLICATIVA COM IMAGENS */
+.bloco-explicativo {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+@media(min-width: 768px) {
+    .paragrafo-item {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+        align-items: center;
+    }
+    .paragrafo-item.invertido {
+        direction: rtl;
+    }
+    .paragrafo-item.invertido .texto-p {
+        direction: ltr;
+    }
+}
+
+.texto-p {
+    background: var(--card-bg);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.03);
+    line-height: 1.8;
+    font-size: 1.1rem;
+    text-align: justify;
+}
+
+.img-p {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+
+/* FORMULÁRIO DE CONTATO */
+.contato-container {
+    max-width: 650px;
+    margin: 0 auto;
+    background: var(--card-bg);
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.form-group input, .form-group select, .form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cbd5e0;
+    border-radius: 8px;
+    font-size: 16px;
+    background: #fafafa;
+}
+
+button.btn-principal {
+    background: var(--primary-light);
+    color:white;
+    border:none;
+    padding:14px 24px;
+    border-radius:8px;
+    cursor:pointer;
+    font-size: 16px;
+    font-weight: 700;
+    width: 100%;
+    transition: background 0.2s;
+}
+
+button.btn-principal:hover{
+    background: var(--primary);
+}
+
+/* BOTÃO DE ACESSIBILIDADE FLUTUANTE (ARRASTÁVEL) */
+.btn-acessibilidade {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    font-size: 26px;
+    z-index: 1000;
+    background: var(--primary-light);
+    color: white;
+    border: none;
+    cursor: move;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    touch-action: none;
+}
+
+/* PAINEL COMPACTO */
+.painel {
+    position: fixed;
+    top: 50
+}

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoLar - Imobiliária Sustentável</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="alertaVisual" role="alert">
+    🔔 SOLICITAÇÃO RECEBIDA COM SUCESSO!
+</div>
+
+<header>
+    <h1>EcoLar Imóveis</h1>
+    <p>Habitações Sustentáveis, Inteligentes e Eficientes</p>
+</header>
+
+<nav aria-label="Navegação Principal">
+    <button id="btn-catalogo" class="nav-ativo" onclick="mostrarPagina('catalogo')">🏡 Catálogo de Imóveis</button>
+    <button id="btn-importancia" onclick="mostrarPagina('importancia')">📋 Conceito Sustentável</button>
+    <button id="btn-contato" onclick="mostrarPagina('contato')">📩 Simulação & Contato</button>
+</nav>
+
+<section id="catalogo" class="pagina ativa" aria-label="Catálogo de Imóveis">
+    <h2>Nossos Imóveis Disponíveis</h2>
+    
+    <div class="vitrine">
+        <div class="card-imovel">
+            <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80" alt="Casa térrea sustentável moderna.">
+            <div class="info-imovel">
+                <div class="tags">
+                    <span class="tag">☀️ Energia Solar</span>
+                    <span class="tag">💧 Captação de Chuva</span>
+                </div>
+                <h3>Casa Eco Horizon - Jardim Botânico</h3>
+                <p>3 Quartos | Equipada com painéis fotovoltaicos modernos e cisterna integrada.</p>
+                <p class="preco">R$ 850.000</p>
+                <button class="btn-principal" onclick="interesseImovel('Casa Eco Horizon')">Tenho Interesse</button>
+            </div>
+        </div>
+
+        <div class="card-imovel">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Residência moderna com telhado verde.">
+            <div class="info-imovel">
+                <div class="tags">
+                    <span class="tag">🌿 Telhado Verde</span>
+                    <span class="tag">🔋 Baterias Inteligentes</span>
+                </div>
+                <h3>Residência Oasis - Bosque Imperial</h3>
+                <p>4 Suítes | Engenharia de ponta com isolamento térmico e automação de consumo.</p>
+                <p class="preco">R$ 1.450.000</p>
+                <button class="btn-principal" onclick="interesseImovel('Residência Oasis')">Tenho Interesse</button>
+            </div>
+        </div>
+
+        <div class="card-imovel">
+            <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=800&q=80" alt="Chácara ecológica de madeira certificada.">
+            <div class="info-imovel">
+                <div class="tags">
+                    <span class="tag">🪵 Madeira Certificada</span>
+                    <span class="tag">🌪️ Mini Usina Eólica</span>
+                </div>
+                <h3>Chácara GreenValley - Vale Verde</h3>
+                <p>2 Quartos | Terreno arborizado com aproveitamento total de ventilação natural.</p>
+                <p class="preco">R$ 620.000</p>
+                <button class="btn-principal" onclick="interesseImovel('Chácara GreenValley')">Tenho Interesse</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="importancia" class="pagina" aria-label="Importância e Inclusão">
+    <h2>A Importância da Habitação Sustentável</h2>
+    
+    <div class="bloco-explicativo">
+        <div class="paragrafo-item">
+            <img class="img-p" src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=500&q=80" alt="Painéis solares fotovoltaicos instalados em um telhado moderno.">
+            <div class="texto-p">
+                As casas sustentáveis desempenham um papel crucial no cenário urbano atual, pois combinam a preservação ambiental com a eficiência econômica. Ao integrar tecnologias como painéis solares e sistemas de captação de água da chuva, essas construções reduzem drasticamente o consumo de recursos naturais e geram economias financeiras significativas a longo prazo.
+            </div>
+        </div>
+
+        <div class="paragrafo-item invertido">
+            <img class="img-p" src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=500&q=80" alt="Paisagem verde preservada próxima a uma construção.">
+            <div class="texto-p">
+                A aplicação de arquitetura bioclimática permite o aproveitamento inteligente da iluminação e ventilação naturais ao longo das estações. Esse planejamento reduz consideravelmente a necessidade de aparelhos de ar-condicionado ou aquecedores elétricos no dia a dia. Com isso, os moradores ganham conforto térmico ideal com baixa emissão de carbono.
+            </div>
+        </div>
+
+        <div class="paragrafo-item">
+            <img class="img-p" src="https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=500&q=80" alt="Madeiras tratadas e reflorestadas prontas para uso ecológico.">
+            <div class="texto-p">
+                Além disso, a escolha consciente de materiais biodegradáveis ou reciclados reduz os entulhos e impactos gerados durante a obra. O uso de tintas minerais, madeiras de reflorestamento com certificação rigorosa e tijolos ecológicos trazem maior segurança biológica. These propriedades evitam alergias e proporcionam um ar muito mais puro.
+            </div>
+        </div>
+
+        <div class="paragrafo-item invertido">
+            <img class="img-p" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=500&q=80" alt="Fachada lateral de residência com jardim vertical integrado.">
+            <div class="texto-p">
+                Investir em um imóvel sustentável assegura também a valorização imobiliária constante em um mercado cada vez mais consciente. O controle digital de gastos energéticos e os tetos verdes criam microclimas benéficos nas grandes metrópoles urbanas. Escolher essas moradias é consolidar um investimento financeiro inteligente e seguro.
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contato" class="pagina" aria-label="Contato e Simulação">
+    <h2>Agende uma Visita ou Atendimento Especializado</h2>
+    
+    <div class="contato-container">
+        <form id="formContato" onsubmit="enviarProposta(event)">
+            <div class="form-group">
+                <label for="nome">Nome Completo</label>
+                <input type="text" id="nome" required placeholder="Seu nome">
+            </div>
+            <div class="form-group">
+                <label for="email">E-mail ou WhatsApp</label>
+                <input type="text" id="email" required placeholder="E-mail ou número de contato">
+            </div>
+            <div class="form-group">
+                <label for="imovelInteresse">Imóvel de Interesse</label>
+                <select id="imovelInteresse">
+                    <option value="Geral">Falar com corretor especialista em sustentabilidade</option>
+                    <option value="Casa Eco Horizon">Casa Eco Horizon - R$ 850.000</option>
+                    <option value="Residência Oasis">Residência Oasis - R$ 1.450.000</option>
+                    <option value="Chácara GreenValley">Chácara GreenValley - R$ 620.000</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="mensagem">Mensagem / Dúvidas</label>
+                <textarea id="mensagem" rows="4" placeholder="Conte-nos quais diferenciais ecológicos você busca..."></textarea>
+            </div>
+            <button type="submit" class="btn-principal">Enviar Solicitação</button>
+        </form>
+    </div>
+</section>
+
+<div id="painel" class="painel" aria-hidden="true">
+    <button id="opt-leitor" onclick="toggleLeitorCego()">Modo Pessoa Cega: DESATIVADO</button>
+    <button id="opt-surdo" onclick="toggleModoSurdo()">Modo Alerta Visual: DESATIVADO</button>
+    <button onclick="aumentarFonte()">Aumentar Texto (+)</button>
+    <button onclick="diminuirFonte()">Diminuir Texto (-)</button>
+    <button onclick="modoEscuro()">Modo Escuro 🌙</button>
+    <button onclick="altoContraste()">Alto Contraste 🔲</button>
+    <button onclick="fecharPainel()" style="background: #e53e3e; color: white;">Fechar Menu ✖️</button>
+</div>
+
+<button id="btnAcessibilidade" class="btn-acessibilidade" onmousedown="iniciarArrasto(event)" ontouchstart="iniciarArrasto(event)" onclick="tratarCliqueBotao(event)" aria-label="Abrir opções de acessibilidade">♿</button>
+
+<footer>
+    <p>© 2026 EcoLar Imóveis Ltda. CRECI j-9999. Compromisso real com a eficiência ecológica.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
